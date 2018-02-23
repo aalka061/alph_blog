@@ -37,9 +37,8 @@ gem 'sqlite3',       group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'pg',       group: :production
+gem 'rails_12factor',       group: :production
 
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-end 
+
 
