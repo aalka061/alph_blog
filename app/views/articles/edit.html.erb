@@ -1,19 +1,7 @@
 <h2>
-  Edit articles
+  Edit Article
 </h2>
 
-<% if @article.errors.any? %>
-<ul>
-  <% @article.errors.full_messages.each  do |msg| %>
-  <li><%= msg %> </li> 
-  <% end %>
-</ul>
-<%end%>
+<%= render 'form' %>
 
-<%= form_for @article do |a| %>
-  <%= a.label :title %><br>
-  <%= a.text_field :title %><br>
-  <%= a.label :description %><br>
-  <%= a.text_area :description%> <br>
-  <%= a.submit%>
-<%end%> 
+<%=link_to 'Articles List', articles_path %>

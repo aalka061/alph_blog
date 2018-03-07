@@ -2,18 +2,4 @@
   Create new articles
 </h2>
 
-<% if @article.errors.any? %>
-<ul>
-  <% @article.errors.full_messages.each  do |msg| %>
-  <li><%= msg %> </li> 
-  <% end %>
-</ul>
-<%end%>
-
-<%= form_for @article do |a| %>
-  <%= a.label :title %><br>
-  <%= a.text_field :title %><br>
-  <%= a.label :description %><br>
-  <%= a.text_area :description%> <br>
-  <%= a.submit%>
-<%end%> 
+<%= render 'form' %>
