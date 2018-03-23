@@ -19,7 +19,13 @@ th, td {
   <% flash.each do |namme, msg| %>
     <%=msg%>
   <% end %>
-<%= yield %>
+  
+<%= render 'layouts/navigation'%>
+<div class="container">
+   <%= yield %>
+  </div>
+  <%=render 'layouts/footer' %>
+
 
 </body>
 </html>
