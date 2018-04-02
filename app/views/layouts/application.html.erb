@@ -16,15 +16,14 @@ th, td {
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% flash.each do |namme, msg| %>
-    <%=msg%>
-  <% end %>
   
 <%= render 'layouts/navigation'%>
+    <%= render 'layouts/messages'%>
+
 <div class="container">
    <%= yield %>
   </div>
-  <%=render 'layouts/footer' %>
+ <%=render 'layouts/footer' %>
 
 
 </body>
