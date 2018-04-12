@@ -2,32 +2,4 @@
   Sing up for Alpha Blog
 </h1>
 
-<%=render 'shared/errors', obj: @user%>
-
-<%= form_for @user do |a| %>
-<div>
-         <div class="row">
-            <div class="col-xs-5 col-offset-2 form-group">
-              <%= a.label :username %>
-              <%= a.text_field :username, class:"form-control" %>
-           </div>
-       </div>  
-
-       <div class="row">
-           <div class=" col-xs-5 col-offset-2 form-group">
-              <%= a.label :email %>
-              <%= a.email_field :email, class:"form-control"  %> 
-          </div>
-      </div>
-
-      <div class="row">
-           <div class=" col-xs-5 col-offset-2 form-group">
-              <%= a.label :password %>
-              <%= a.password_field :password, class:"form-control"  %> 
-          </div>
-      </div>
-</div>
-
-  
-  <%= a.submit "Sign up", class:"btn btn-primary" %>
-<%end%> 
+<%=render 'form' %>
