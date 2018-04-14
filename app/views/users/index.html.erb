@@ -2,7 +2,9 @@
   All Alpha Bloggers
 </h1>
 
-
+<div align="center">
+  <%= will_paginate %>
+</div>
 <div align="center">
     <%@users.each do |user|%>
     <ul class="list">
@@ -16,4 +18,8 @@
     </ul>
 
   <%end%>  
+</div>
+
+<div align="center">
+  <%= will_paginate %>
 </div>
