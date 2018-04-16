@@ -1,6 +1,6 @@
 class UsersController< ApplicationController
   
- ##before_action :set_user, only: [:edit, :show, :update]
+ before_action :set_user, only: [:edit, :show, :update]
   
   def new 
    @user = User.new
@@ -17,6 +17,8 @@ class UsersController< ApplicationController
   end
   
   def edit
+    flash[:danger] = "You need to Sign up first"
+    redirect_to signup_path if !loggedin?
   end 
   
   def update
