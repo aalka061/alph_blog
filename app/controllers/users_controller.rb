@@ -1,6 +1,7 @@
 class UsersController< ApplicationController
   
  before_action :set_user, only: [:edit, :show, :update]
+ before_action :require_same_user, only: [:edit, :update]
   
   def new 
    @user = User.new
@@ -17,8 +18,7 @@ class UsersController< ApplicationController
   end
   
   def edit
-    flash[:danger] = "You need to Sign up first"
-    redirect_to signup_path if !loggedin?
+    
   end 
   
   def update
@@ -46,6 +46,16 @@ class UsersController< ApplicationController
   
   def set_user
     @user = User.find(params[:id])
+  end
+  def require_same_user
+    if (loggedin? && current_user != @user) 
+      flash[:danger] = "You only can edit or update your own account"
+      redirect_to root_path
+    end
+    else if (!loggedin?) 
+      flash[:danger] = "You must be logged in!"
+      redirect_to root_path
+    end
   end
 
 end
