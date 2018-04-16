@@ -16,7 +16,7 @@
   <hr> 
    <%= simple_format(@article.description) %>
   
-    <%if loggedin? && current_user == @article.user %>
+    <%if loggedin? && (current_user == @article.user || current_user.admin?) %>
 
       <div class="articles-actions">
         <%=link_to 'Articles List', articles_path, class:"btn btn-xs btn-primary" %>    
